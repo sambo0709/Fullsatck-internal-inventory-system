@@ -1,0 +1,390 @@
+/*
+I certify that the CSS file I am submitting is all my own work.
+None of it is copied from any source or any person.
+Signed: Samuel Boye
+Date: 12/08/2025
+Class: CSS 305
+File Name: styles.css
+Assignment: Final Project – Car Parts Catalog
+Description: Stylesheet for all site layout, typography, forms,
+             tables, and component styling.
+*/
+
+
+/* Base Layout*/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body.body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+                 "Segoe UI", sans-serif;
+    color: #111827;
+    background: radial-gradient(circle at top, #fdfdfd 0, #f3f4f6 40%, #e5e7eb 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header*/
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 5vw;
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.brand-mark {
+    width: 26px;
+    height: 26px;
+    border-radius: 9px;
+    background: linear-gradient(135deg, #3b82f6, #0ea5e9);
+    box-shadow: 0 6px 15px rgba(37, 99, 235, 0.35);
+}
+
+.brand-name {
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    font-size: 1.1rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.25rem;
+    font-size: 0.95rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #4b5563;
+    padding-bottom: 0.15rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.nav-link:hover {
+    color: #111827;
+}
+
+.nav-link.active {
+    color: #111827;
+    border-color: #111827;
+}
+
+/* Main layout*/
+
+.layout {
+    flex: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.4fr);
+    gap: 3rem;
+    padding: 3rem 8vw;
+}
+
+@media (max-width: 900px) {
+    .layout {
+        grid-template-columns: 1fr;
+        padding: 2rem 6vw 3rem;
+    }
+}
+
+/* Optional single-column wrapper */
+.page-main {
+    flex: 1;
+    padding: 3rem 8vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+@media (max-width: 900px) {
+    .page-main {
+        padding: 2rem 6vw 3rem;
+    }
+}
+
+/* Hero section*/
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.75rem;
+}
+
+.hero-title {
+    font-size: clamp(2.3rem, 3vw + 1.5rem, 3.2rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin: 0;
+}
+
+.hero-subtitle {
+    font-size: 1.02rem;
+    color: #4b5563;
+    max-width: 34rem;
+    margin: 0.75rem 0 0;
+}
+
+/* panels/cards */
+
+.panel {
+    align-self: flex-start;
+    padding: 1.8rem 1.9rem 1.6rem;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow:
+        0 18px 40px rgba(15, 23, 42, 0.15),
+        0 0 0 1px rgba(148, 163, 184, 0.15);
+    width: 100%;
+    overflow: hidden;
+}
+
+.panel-table {
+    max-width: 100%;
+    width: 100%;
+}
+
+.panel-title {
+    margin: 0 0 0.35rem;
+    font-size: 1.25rem;
+}
+
+.panel-text {
+    margin: 0 0 1.1rem;
+    font-size: 0.95rem;
+    color: #4b5563;
+}
+
+/*Forms*/
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.9rem;
+}
+
+.field label {
+    font-weight: 500;
+    color: #4b5563;
+}
+
+.field input {
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    padding: 0.55rem 0.75rem;
+    font-size: 0.95rem;
+    background: #f9fafb;
+    transition: 0.15s ease;
+}
+
+.field input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.25);
+    background: #ffffff;
+}
+
+/* Buttons*/
+
+.btn {
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.92rem;
+    padding: 0.55rem 1.15rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    transition: 0.15s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #111827, #374151);
+    color: white;
+}
+
+.btn-ghost {
+    background: rgba(255, 255, 255, 0.9);
+    color: #111827;
+    border: 1px solid rgba(148, 163, 184, 0.6);
+}
+
+/* Links*/
+
+.link-button {
+    font-size: 0.86rem;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.link-button:hover {
+    text-decoration: underline;
+}
+
+/* Table Layout */
+
+.table-wrapper {
+    margin-top: 0.75rem;
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 420px;
+}
+
+.table-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    table-layout: fixed;
+}
+
+.table-wrapper thead th {
+    font-weight: 600;
+    background: #f3f4f6;
+    padding: 0.7rem 1rem;
+}
+
+.table-wrapper td {
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.table-wrapper td:first-child {
+    white-space: normal;
+}
+
+/* Suppliers table */
+.suppliers-panel th:nth-child(5),
+.suppliers-panel td:nth-child(5) {
+    text-align: center;
+}
+
+.suppliers-panel th:nth-child(6),
+.suppliers-panel td:nth-child(6),
+.suppliers-panel th:nth-child(7),
+.suppliers-panel td:nth-child(7) {
+    text-align: right;
+}
+
+/* Footer */
+
+.site-footer {
+    padding: 1rem 5vw 1.4rem;
+    font-size: 0.78rem;
+    text-align: center;
+    color: #9ca3af;
+    background: rgba(255, 255, 255, 0.9);
+    border-top: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+/* ---------------------------------
+   DARK MODE SUPPORT
+   --------------------------------- */
+@media (prefers-color-scheme: dark) {
+
+    body.body {
+        color: #e5e7eb;
+        background: radial-gradient(circle at top, #020617 0, #020617 40%, #030712 100%);
+    }
+
+    .site-header {
+        background: rgba(15, 23, 42, 0.92);
+        border-bottom: 1px solid rgba(148, 163, 184, 0.45);
+    }
+
+    .brand-name {
+        color: #f9fafb;
+    }
+
+    .nav-link {
+        color: #9ca3af;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        color: #e5e7eb;
+        border-color: #e5e7eb;
+    }
+
+    .panel {
+        background: rgba(15, 23, 42, 0.98);
+        box-shadow:
+            0 18px 40px rgba(0, 0, 0, 0.7),
+            0 0 0 1px rgba(30, 64, 175, 0.4);
+    }
+
+    .hero-subtitle,
+    .panel-text,
+    .field label {
+        color: #9ca3af;
+    }
+
+    .field input {
+        background: #020617;
+        border-color: #1f2937;
+        color: #e5e7eb;
+    }
+
+    .field input:focus {
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.5);
+        background: #020617;
+    }
+
+    .table-wrapper thead th {
+        background: #111827;
+        color: #e5e7eb;
+    }
+
+    .table-wrapper td {
+        border-bottom-color: #1f2937;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, #2563eb, #4f46e5);
+        color: #f9fafb;
+    }
+
+    .btn-ghost {
+        background: rgba(15, 23, 42, 0.9);
+        color: #e5e7eb;
+        border-color: rgba(75, 85, 99, 0.9);
+    }
+
+    .link-button {
+        color: #60a5fa;
+    }
+
+    .site-footer {
+        background: rgba(15, 23, 42, 0.95);
+        border-top-color: rgba(55, 65, 81, 0.9);
+        color: #6b7280;
+    }
+}

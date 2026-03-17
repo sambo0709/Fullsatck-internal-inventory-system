@@ -1,0 +1,106 @@
+<!--
+I certify that the html file I am submitting is all my own and group work.
+None of it is copied from any source or any person.
+Signed: Philip Lee
+Date: 12/10/2025
+Class: CSS 305
+File Name: newUser.html
+Assignment: Final Project – Car Parts Catalog
+Description: Create new account form.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create account – BoyeLeeNaga Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="body">
+
+<header class="site-header">
+
+    <span class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">BoyeLeeNaga Shop</span>
+    </span>
+
+    <nav class="nav-links">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="catalog.php" class="nav-link">Catalog</a>
+        <a href="suppliers.php" class="nav-link">Suppliers</a>
+        <a href="users.php" class="nav-link active">Users</a>
+    </nav>
+
+</header>
+
+<!-- same 2-column layout as index.html -->
+<main class="layout">
+
+    <!-- LEFT HERO SECTION -->
+    <section class="hero">
+        <h1 class="hero-title">Create account</h1>
+
+        <p class="hero-subtitle">
+            Create a user so you can sign in, manage parts and suppliers,
+            and keep this catalog up to date.
+        </p>
+    </section>
+
+    <!-- RIGHT CREATE ACCOUNT CARD -->
+    <section class="panel panel-auth">
+
+        <h2 class="panel-title">Create account</h2>
+        <p class="panel-text">
+            Enter a username, email, and password for this internal system.
+        </p>
+
+        <form method="post" action="newUser.php" class="form">
+
+            <label class="field">
+                <span class="field-label">Username</span>
+                <input type="text" name="newUser" required>
+            </label>
+
+            <label class="field">
+                <span class="field-label">Email</span>
+                <input type="email" name="newEmail" required>
+            </label>
+
+            <label class="field">
+                <span class="field-label">Password</span>
+                <input type="password" name="newPass" required>
+            </label>
+
+            <section class="form-actions">
+                <button type="submit" class="btn btn-primary full">
+                    Create account
+                </button>
+            </section>
+
+            <section class="form-secondary-actions">
+                <button type="button"
+                        class="link-button"
+                        onclick="location.href='index.html'">
+                    Back to login
+                </button>
+            </section>
+
+        </form>
+
+        <p class="panel-auth-footnote">
+            This account is for internal use at the mechanic shop as part of
+            the CSS 305 final project.
+        </p>
+
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <span>© BoyeLeeNaga · CSS 305 Final Project ·</span>
+</footer>
+
+</body>
+</html>
